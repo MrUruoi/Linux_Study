@@ -1,0 +1,88 @@
+* Streams
+ In C, the term 'stream' means any source of input or any destination for output.
+
+* Opening a File
+      FILE * fopen(const char * restrict path, const char * restrict mode);
+
+* Closing a File
+      int fclose(FILE *stream);
+
+* Attaching a File to an Open Stream
+     FILE * fopen(const char * restrict path, const char * restrict mode);
+
+* Temporary Files
+     FILE * tmpfile(void);
+
+     char * tmpnam(char *s);
+
+* File Buffering
+     int fflush(FILE *stream);
+
+     void setbuf(FILE *restrict stream, char *restrict buf);
+
+     int setvbuf(FILE *restrict stream, char *restrict buf, int type, size_t size);
+
+* Formatted I/O
+     int printf(const char * restrict format, ...);
+
+     int fprintf(FILE * restrict stream, const char * restrict format, ...);
+
+     int fscanf(FILE *restrict stream, const char *restrict format, ...);
+
+     int scanf(const char *restrict format, ...);
+
+* Deteching End-of-File and Error Conditions
+     void clearerr(FILE *stream);
+
+     int feof(FILE *stream);
+
+     int ferror(FILE *stream);
+
+* Character I/O
+     int fputc(int c, FILE *stream);
+
+     int putc(int c, FILE *stream);
+
+     int putchar(int c);
+
+     int fgetc(FILE *stream);
+
+     int getc(FILE *stream);
+
+     int getchar(void);
+
+* Line I/O
+     int fputs(const char *restrict s, FILE *restrict stream);
+
+     int puts(const char *s);
+
+	 char * fgets(char * restrict str, int size, FILE * restrict stream);
+
+     char * gets(char *str);
+
+* File Positioning
+     int fgetpos(FILE *restrict stream, fpos_t *restrict pos);
+
+     int fseek(FILE *stream, long offset, int whence);
+
+     int fsetpos(FILE *stream, const fpos_t *pos);
+
+     long ftell(FILE *stream);
+
+     void rewind(FILE *stream);
+
+	SEEK_SET, SEEK_CUR, SEEK_END
+
+* Block I/O
+     size_t fread(void *restrict ptr, size_t size, size_t nitems, FILE *restrict stream);
+
+     size_t fwrite(const void *restrict ptr, size_t size, size_t nitems, FILE *restrict stream);
+
+---
+MEMO
+
+man 3 fopen
+
+(vim) :! man fopen
+
+cussor shift+k

@@ -1,0 +1,45 @@
+* open
+     int open(const char *path, int oflag, ...);
+
+* write
+     int dprintf(int fd, const char * restrict format, ...);
+
+     ssize_t pwrite(int fildes, const void *buf, size_t nbyte, off_t offset);
+
+     ssize_t write(int fildes, const void *buf, size_t nbyte);
+
+* read
+     ssize_t pread(int d, void *buf, size_t nbyte, off_t offset);
+
+     ssize_t read(int fildes, void *buf, size_t nbyte);
+
+* fd -> fp
+     FILE * fdopen(int fildes, const char *mode);
+
+* fp -> fd
+     int fileno(FILE *stream);
+
+* Hardlink
+     int link(const char *path1, const char *path2);
+
+* Softlink
+     int symlink(const char *path1, const char *path2);
+
+* Unlink
+     int unlink(const char *path);
+
+--
+> ln test.txt hard.txt
+> ln -s test.txt soft.txt
+> stat test.txt
+> stat hard.txt
+> stat soft.txt
+
+
+* stat
+     int fstat(int fildes, struct stat *buf);
+
+     int lstat(const char *restrict path, struct stat *restrict buf);
+
+     int stat(const char *restrict path, struct stat *restrict buf);
+

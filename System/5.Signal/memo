@@ -1,0 +1,29 @@
+* signal  
+     typedef void (*sig_t) (int);
+
+     sig_t signal(int sig, sig_t func);
+
+     int kill(pid_t pid, int sig);
+
+     int sigprocmask(int how, const sigset_t *restrict set, sigset_t *restrict oset);
+     int sigaddset(sigset_t *set, int signo);
+
+     int sigdelset(sigset_t *set, int signo);
+
+     int sigemptyset(sigset_t *set);
+
+     int sigfillset(sigset_t *set);
+
+     int sigismember(const sigset_t *set, int signo);
+
+     int
+     sigaction(int sig, const struct sigaction *restrict act,
+         struct sigaction *restrict oact);
+	
+     int sigqueue(pid_t pid, int signo, const union sigval value);
+
+--
+
+kill -TERM <pid>
+kill -TERM `pidof test`
+kill -KILL <pid>

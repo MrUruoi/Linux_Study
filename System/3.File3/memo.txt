@@ -1,0 +1,31 @@
+* dir
+     DIR *
+     opendir(const char *filename);
+
+     struct dirent *
+     readdir(DIR *dirp);
+
+     int
+     closedir(DIR *dirp);
+
+* map
+     void * mmap(void *addr, size_t len, int prot, int flags, int fd, off_t offset);
+
+     int munmap(void *addr, size_t len);
+
+* Lock
+     int flock(int fd, int operation);
+
+* Blocking and Non-blocking
+     int fcntl(int fildes, int cmd, ...);
+
+* I/O Multiplexing
+     int inotify_init(void);
+     int inotify_init1(int flags);
+	 // BSD
+	 int kqueue(void);
+
+     int select(int nfds, fd_set *restrict readfds, fd_set *restrict writefds, fd_set *restrict errorfds, struct timeval *restrict timeout);
+
+	 //
+	 epoll
